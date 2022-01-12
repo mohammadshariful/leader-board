@@ -22,20 +22,29 @@ hr {
   width: 90%;
   margin: 0 auto;
 }
+.section-title::after {
+  content: "";
+  width: 35px;
+  height: 5px;
+  background-color: #ed6b4f;
+  border-radius: 4px;
+  display: block;
+  margin: 10px 0;
+}
 /* style for header */
 header {
-  max-width: 1440px;
+  max-width: 100vw;
   height: auto;
   background-color: #562eff;
   position: sticky;
   top: 0;
-  left: 0;
 }
 nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 18px 285px;
+  position: relative;
+  justify-content: space-evenly;
+  padding: 5px 0;
 }
 .nav-brands {
   display: flex;
@@ -51,13 +60,14 @@ nav {
   padding-left: 15px;
   font-weight: 500;
 }
-
+.nav-links {
+  position: relative;
+}
 .nav-links ul {
   display: flex;
+  text-align: center;
   align-items: center;
-  justify-content: space-between;
 }
-
 .nav-links ul li {
   list-style-type: none;
 }
@@ -68,11 +78,38 @@ nav {
   font-weight: 400;
   color: #fff;
   padding-left: 36px;
+  position: relative;
+}
+.nav-links ul li a::after {
+  content: "";
+  width: 0;
+  height: 4px;
+  background-color: #ed6b4f;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+  transition: 0.3s linear;
+}
+.nav-links ul li a:hover::after {
+  width: 100%;
 }
 .nav-links ul li a img {
   width: 51px;
   height: 51px;
 }
+/* Menu icon */
+.menu-icon {
+  position: relative;
+  margin-bottom: 30px;
+  display: none;
+}
+.fa-bars,
+.fa-times {
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+}
+
 /* top player  start */
 .top-player-blogs {
   background-color: #fff;
@@ -204,34 +241,37 @@ nav {
   body {
     background-color: #fff;
   }
-  /* ----------------- */
-  header {
-    position: fixed;
-  }
-  nav {
-    justify-content: center;
-    padding: 5px 10px;
-  }
 
-  .nav-logo img {
-    width: 30px;
-    height: auto;
-  }
-  .nav-text {
-    font-size: 20px;
-    padding-left: 5px;
-  }
-
-  .nav-links ul li a {
+  .nav-links {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 100vh;
+    background-color: rgba(44, 114, 194, 0.973);
+    top: 67px;
+    left: -200px;
     display: block;
-    font-size: 10px;
+    transition: 0.5s linear;
   }
-  .nav-links ul li a img {
-    width: 30px;
-    height: 30px;
+  .nav-links ul {
+    flex-direction: column;
+    margin: 20px 0;
   }
-  /* ------------------- */
-  .container {
+  .nav-links ul li {
+    padding: 10px;
+  }
+  .nav-links ul li a {
+    font-size: 20px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+  .fa-times {
+    display: none;
+  }
+
+  -------- */ .container {
     width: 100%;
     margin-top: 30px;
   }
